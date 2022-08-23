@@ -34,15 +34,8 @@ public class Consumer {
 
         System.out.println("Create a Topic/ Queue based on the given parameter");
         Destination destination = null;
-//        if (args.length > 0 && args[0].equalsIgnoreCase("QUEUE")) {
-            destination = session.createQueue("gpcoder-jms-queue");
-//        } else if (args.length > 0 && args[0].equalsIgnoreCase("TOPIC")) {
+        destination = session.createQueue("gpcoder-jms-queue");
 //            destination = session.createTopic("gpcoder-jms-topic");
-//        } else {
-//            System.out.println("Error: You must specify Queue or Topic");
-//            connection.close();
-//            System.exit(1);
-//        }
 
         System.out.println("Create a Consumer to receive messages from one Topic or Queue.");
         MessageConsumer consumer = session.createConsumer(destination);
